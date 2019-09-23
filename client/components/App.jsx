@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { Component, Fragment } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+// import WaitIndicator from './WaitIndicator'
+// import ErrorMessage from './ErrorMessage'
 
-import ErrorMessage from './ErrorMessage'
 import LoadSubreddit from './LoadSubreddit'
 import SubredditList from './SubredditList'
-import WaitIndicator from './WaitIndicator'
+import Home from './Home'
+import Africa from './Africa'
 
-const App = () => (
-  <div className='app'>
-    <ErrorMessage />
-    <LoadSubreddit>
-      <WaitIndicator />
-    </LoadSubreddit>
-    <SubredditList />
-  </div>
-)
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className='app'>
+          <Route path='/' component={LoadSubreddit} />
+          <Route path='/' component={Home} />
+          <Route path='/' component={SubredditList} />
+          <Route path='/africa' component={Africa} />
+        </div>
+      </Router>
+    )
+  }
+}
+
 
 export default App

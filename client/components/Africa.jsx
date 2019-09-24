@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react'
+import {connect} from 'react-redux'
 
-import Post from './Post'
+
 import {fetchPosts} from '../actions'
+import SubredditList from './SubredditList';
 
 class Africa extends Component {
     constructor(props){
@@ -10,19 +12,19 @@ class Africa extends Component {
             subreddit: 'africa'
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         this.props.dispatch(fetchPosts(this.state.subreddit))
-        console.log(posts)
+       
     }
 
     render(){
         return(
             <Fragment>
                 <h1>News from Africa</h1>
-
+                <SubredditList />
             </Fragment>
         )
     }
 }
 
-export default Africa
+export default connect()(Africa)

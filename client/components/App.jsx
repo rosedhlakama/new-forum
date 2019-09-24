@@ -7,16 +7,19 @@ import LoadSubreddit from './LoadSubreddit'
 import SubredditList from './SubredditList'
 import Home from './Home'
 import Africa from './Africa'
+import KanyeQuote from './KanyeQuote'
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className='app'>
-          <Route path='/' component={LoadSubreddit} />
+          
           <Route path='/' component={Home} />
-          <Route path='/' component={SubredditList} />
+          {/* <Route path='/' component={SubredditList} /> */}
           <Route path='/africa' component={Africa} />
+          <Route path='/' component={LoadSubreddit} />
+          <Route path='/' component={KanyeQuote} />
         </div>
       </Router>
     )

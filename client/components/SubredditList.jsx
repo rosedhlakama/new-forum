@@ -5,7 +5,7 @@ import Post from './Post'
 
 const Subreddit = ({subreddits}) => (
 
-  <div>
+  <div className="subreddit-list">
     {subreddits.map((post, i) =>
     
       <Post
